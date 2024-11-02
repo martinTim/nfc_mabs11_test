@@ -24,25 +24,25 @@ extension AppDelegate {
             ndefMessage.records[0].typeNameFormat != .empty else {
                 return false
             }
-            let nfcPluginInstance: NfcPlugin = self.viewController.getCommandInstance("NfcPlugin") as! NfcPlugin
+            // let nfcPluginInstance: NfcPlugin = self.viewController.getCommandInstance("NfcPlugin") as! NfcPlugin
             
             var resolved: Bool = false;
-                NSLog(nfcPluginInstance.debugDescription);
+                // NSLog(nfcPluginInstance.debugDescription);
                 
-                DispatchQueue.global().async {
-                    let waitingTimeInterval: Double = 0.1;
-                    print("<NFC> Did start timeout")
-                    for _ in 1...2000 { // 5?s timeout
-                        if ( !nfcPluginInstance.isListeningNDEF ) {
-                        Thread.sleep(forTimeInterval: waitingTimeInterval)
-                        } else {
-                            let jsonDictionary = ndefMessage.ndefMessageToJSON()
-                            nfcPluginInstance.sendThroughChannel(jsonDictionary: jsonDictionary)
-                            resolved = true
-                            return
-                        }
-                    }
-            }
+            //     DispatchQueue.global().async {
+            //         let waitingTimeInterval: Double = 0.1;
+            //         print("<NFC> Did start timeout")
+            //         for _ in 1...2000 { // 5?s timeout
+            //             if ( !nfcPluginInstance.isListeningNDEF ) {
+            //             Thread.sleep(forTimeInterval: waitingTimeInterval)
+            //             } else {
+            //                 let jsonDictionary = ndefMessage.ndefMessageToJSON()
+            //                 nfcPluginInstance.sendThroughChannel(jsonDictionary: jsonDictionary)
+            //                 resolved = true
+            //                 return
+            //             }
+            //         }
+            // }
             return resolved
             
         } else {
