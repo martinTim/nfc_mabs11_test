@@ -24,12 +24,12 @@ extension AppDelegate {
             ndefMessage.records[0].typeNameFormat != .empty else {
                 return false
             }
-            //let nfcPluginInstance: NfcPlugin = self.viewController.getCommandInstance("NfcPlugin") as! NfcPlugin
-            let nfcPluginInstance: NfcPlugin = self.present.getCommandInstance("NfcPlugin") as! NfcPlugin
             
+            // RT3079764 NOTE: The below is commented out as it is not supported in swift 5
+
+            //let nfcPluginInstance: NfcPlugin = self.viewController.getCommandInstance("NfcPlugin") as! NfcPlugin            
             var resolved: Bool = false;
-                // NSLog(nfcPluginInstance.debugDescription);
-                
+            // NSLog(nfcPluginInstance.debugDescription);
             //     DispatchQueue.global().async {
             //         let waitingTimeInterval: Double = 0.1;
             //         print("<NFC> Did start timeout")
