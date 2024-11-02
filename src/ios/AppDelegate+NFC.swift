@@ -24,7 +24,8 @@ extension AppDelegate {
             ndefMessage.records[0].typeNameFormat != .empty else {
                 return false
             }
-            let nfcPluginInstance: NfcPlugin = self.viewController.getCommandInstance("NfcPlugin") // as! NfcPlugin
+            //let nfcPluginInstance: NfcPlugin = self.viewController.getCommandInstance("NfcPlugin") as! NfcPlugin
+            let nfcPluginInstance: NfcPlugin = self.present.getCommandInstance("NfcPlugin") as! NfcPlugin
             
             var resolved: Bool = false;
                 // NSLog(nfcPluginInstance.debugDescription);
