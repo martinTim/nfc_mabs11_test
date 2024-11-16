@@ -48,7 +48,6 @@
             <feature name="NfcPlugin">
                 <param name="ios-package" value="NfcPlugin" />
             </feature>
-            <preference name="deployment-target" value="12.0" />
             <preference name="UseSwiftLanguageVersion" value="5" />
         </config-file>
 
@@ -58,6 +57,7 @@
         <source-file src="src/ios/NFCNDEFReaderDelegate.swift" />
         <source-file src="src/ios/NFCNDEFWriterDelegate.swift" />
         <source-file src="src/ios/AppDelegate+NFC.swift" />
+        <source-file src="src/ios/SceneDelegate+NFC.swift" />
         <source-file src="src/ios/Utils.swift" />
         <source-file src="src/ios/ISO14443.swift" />
         <source-file src="src/ios/NFCPlugin-Bridging-Header.h" />
